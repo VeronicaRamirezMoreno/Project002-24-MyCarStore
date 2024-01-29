@@ -1,0 +1,43 @@
+.card-card {
+    grid-area: cards-container;
+
+}
+
+.car-prop {
+    border: 1px solid #f7ede2;
+    width: 1fr;
+    padding: 8px;
+    color: f7ede2;
+    background-color: rgb(39, 37, 37);
+    border-radius: 7px;
+    position: relative;
+
+}
+
+h3 {
+    grid-area: h3;
+    color: #F6BD60;
+    margin-bottom: 1px;
+
+}
+
+.car-prop>* {
+    margin: -2px;
+    font-size: small;
+}
+
+.hide {
+    display: none;
+}
+
+.new {
+    width: 65px;
+    height: 60px;
+    position: absolute;
+    right: -10px;
+    top: -6px;
+    background-image: url('../assets/New-PNG.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}

@@ -2,6 +2,10 @@ import { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './App.css'
+import cars from './assets/cars.json'
+import CarData from './components/Car.jsx'
+import CarList from './components/CarList.jsx'
+
 
 function App() {
   const [priceFilter, setPriceFilter] = useState('')
@@ -67,8 +71,27 @@ function App() {
   return (
     <>
       <div id="main">
-        <Header title="MY CAR STORE" /> 
-        <Footer title2="MY CAR STORE - (c) All rights reserved." />      
+        <Header title="MY CAR STORE" />
+        <section className='publi-section'>
+          <h4>Best Cars In the City</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </section>
+        <section className='price-select'>
+          <select value={priceFilter} onChange={handlePriceFilterChange}>
+            <option value="all">Select a price range</option>
+            <option value="cheap">Cheap</option>
+            <option value="standard">Standard</option>
+            <option value="luxury">Luxury</option>
+          </select>
+          <input type="text" placeholder='Introduce a maker' value={makerFilter} onChange={handleMakerFilterChange} />
+        </section>
+        <section className='cards-container'>
+          {/* <CarData car={cars[0]} /> */}
+          {/* <CarList cars={cars} /> */}
+          {filterCars()}
+        </section>
+        <Footer title2="MY CAR STORE - (c) All rights reserved." />
+
       </div>
     </>
   )
